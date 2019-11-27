@@ -73,22 +73,24 @@ class SuperResolutionModelTrainer:
         sub_add_1 = Add(name="Residual_Block_" + str(block_count) + "_Add")([block_input, sub_conv_mult])
         return sub_add_1
 
-    def center_pixels(self, x):
-        print(x)
-        return self.normalize_rgb_values(x - self.dataset_rgb_mean)
 
-    def decenter_pixels(self, x):
-        print(x)
-        return self.denormalize_rgb_values(x) + self.dataset_rgb_mean
-
-    def normalize_rgb_values(self, x):
-        return x / (self.color_scale / 2)
-
-    def denormalize_rgb_values(self, x):
-        return x * (self.color_scale / 2)
+def normalize_rgb_values(x, color_scale=255):
+    return x / (color_scale / 2)
 
 
-def generate_data(training=True, generate_y=True, scale=2, bicubic=True):
+def denormalize_rgb_values(x, color_scale=255):
+    return x * (color_scale / 2)
+
+
+def center_pixels(x, dataset_rgb_mean):
+    return normalize_rgb_values(x - dataset_rgb_mean)
+
+
+def decenter_pixels(x, dataset_rgb_mean):
+    return denormalize_rgb_values(x) + dataset_rgb_mean
+
+
+def generate_data(training=True, generate_y=True, scale=2, bicubic=True, rgb_mean=(114.21, 111.42, 103.03)):
     if bicubic:
         if scale == 2:
             if training:
@@ -143,12 +145,12 @@ def generate_data(training=True, generate_y=True, scale=2, bicubic=True):
             for file_count in range(batch_index, batch_index + batch_size):
                 low_res_image = load_img(os.path.join(root, files[file_count]))
                 # Appending them to existing batch
-                x_train.append(np.array(low_res_image))
+                x_train.append(center_pixels(np.array(low_res_image), rgb_mean))
         if generate_y:
             for root, dirs, files in os.walk(path_y):
                 for file_count in range(batch_index, batch_index + batch_size):
                     high_res_image = load_img(os.path.join(root, files[file_count]))
-                    y_train.append(np.array(high_res_image))
+                    y_train.append(center_pixels(np.array(high_res_image), rgb_mean))
 
         batch_index += batch_size
         yield np.array(x_train), np.array(y_train)
