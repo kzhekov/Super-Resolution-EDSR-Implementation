@@ -1,20 +1,3 @@
-+----------------------------------------------------------------------+
-| Data representation, reduction and analysis                          |
-+----------------------------------------------------------------------+
-| Image super resolution project                                       |
-+----------------------------------------------------------------------+
-| Implementing a deep convolutional neural network (DCNN) for image    |
-| super resolution                                                     |
-+----------------------------------------------------------------------+
-| Zhekov kamen, Van Helden Philemon                                    |
-|                                                                      |
-| 2019-2020                                                            |
-+----------------------------------------------------------------------+
-
-  ----------------------------------------
-  Applied Computer Science: Smart Cities
-  ----------------------------------------
-
 Introduction
 
 Super-resolution is defined as the process of reconstructing a
