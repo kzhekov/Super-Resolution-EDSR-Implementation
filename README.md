@@ -70,13 +70,11 @@ the number of computations required for the feature extraction process
 that happens in the convolutional layers. This contributes to a lighter
 architecture.
 
-![](.//media/image1.png){width="3.1181102362204722in"
-height="1.4803149606299213in"}
+![](.//media/image1.png)
 
 Figure 1 - Pre-upsampling
 
-![](.//media/image2.png){width="2.6631944444444446in"
-height="1.4554461942257217in"}
+![](.//media/image2.png)
 
 Figure 2 - Post-upsampling
 
@@ -88,8 +86,7 @@ to learn only the residuals between the two images, instead of the whole
 transformation from one complete image to another. This also contributes
 to a computationally lighter network.
 
-![](.//media/image3.png){width="3.0555555555555554in"
-height="1.2361111111111112in"}
+![](.//media/image3.png)
 
 Figure 3 - Residual Learning
 
@@ -104,8 +101,7 @@ by optimizing and simplifying existing residual building block
 architectures (Figure 4 - Residual Blocks Architectures).
 
 ![A close up of a map Description automatically
-generated](.//media/image4.png){width="4.460629921259843in"
-height="2.795275590551181in"}
+generated](.//media/image4.png)
 
 Figure 4 - Residual Blocks Architectures
 
@@ -117,8 +113,7 @@ scaling factor, but essentially follows the same idea of using a
 convolutional layer, followed by a shuffle, followed by a convolutional
 layer.
 
-![](.//media/image5.png){width="3.66956583552056in"
-height="2.5269892825896765in"}
+![](.//media/image5.png)
 
 Figure 5 - EDSR Architecture
 
@@ -147,8 +142,7 @@ EDSR Model Creator, as well as the parameters that influence the created
 model's architecture.
 
 ![A screenshot of a cell phone Description automatically
-generated](.//media/image6.png){width="2.8595395888014in"
-height="2.1869706911636047in"}
+generated](.//media/image6.png)
 
 Figure 6 - EDSR Model Creator
 
@@ -196,8 +190,7 @@ batch was a single image and its augmented variations. One horizontal
 flip and one brightness change was the most augmentation possible with
 the available hardware. More than that would make the script crash.
 
-![](.//media/image7.png){width="3.043477690288714in"
-height="9.006286089238845in"}
+![](.//media/image7.png)
 
 Figure 7 - EDSR x2 scaling architecture
 
@@ -230,9 +223,7 @@ be seen in Figure 8 -- Image 900 upscaling comparison Figure 9 -- Image
 879 upscaling comparison where the first image is the result of bilinear
 upscaling, the second is model only, the third is with correction.
 
-![](.//media/image8.png){width="3.3070866141732282in"
-height="5.921259842519685in"}![](.//media/image9.png){width="2.9217399387576553in"
-height="5.859315398075241in"}
+![](.//media/image8.png)![](.//media/image9.png)
 
 Figure 8 -- Image 900 upscaling comparison Figure 9 -- Image 879
 upscaling comparison
@@ -260,27 +251,22 @@ Figure 11 - x4 PSNR upscaling comparison.
   x3 upscaling   25.56dB PSNR      27.57dB PSNR         29.11dB PSNR
   x4 upscaling   23.89dB PSNR      26.48dB PSNR         27.39dB PSNR
 
-![](.//media/image10.png){width="3.2007874015748032in"
-height="2.4015748031496065in"}![](.//media/image11.png){width="3.2007874015748032in"
-height="2.4015748031496065in"}
+![](.//media/image10.png)![](.//media/image11.png)
 
 Figure 10 - x2 and x3 upscaling PSNR comparison
 
-![](.//media/image12.png){width="3.191304680664917in"
-height="2.392536089238845in"}
+![](.//media/image12.png)
 
 Figure 11 - x4 PSNR upscaling comparison
 
 Upsampling details comparison
 
-![](.//media/image13.png){width="5.755905511811024in"
-height="2.8031496062992125in"}
+![](.//media/image13.png)
 
 Figure 12 - Bilinear (left) vs model (right) upscaling on validation
 image 820
 
-![](.//media/image14.png){width="5.716535433070866in"
-height="2.7874015748031495in"}
+![](.//media/image14.png)
 
 Figure 13 - Bilinear (left) vs model (right) upscaling on validation
 image 819
